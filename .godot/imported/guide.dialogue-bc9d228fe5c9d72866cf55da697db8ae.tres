@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_krcf0"]
+
+[resource]
+script = ExtResource("1_krcf0")
+using_states = PackedStringArray()
+titles = {
+"start": "2"
+}
+character_names = PackedStringArray("小熊", "哈基米")
+first_title = "2"
+lines = {
+"1": {
+"id": "1",
+"next_id": "2",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"next_id_after": "13",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "叛逆，不拿取",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "叛逆，不拿取",
+"type": &"response"
+},
+"11": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "13",
+"notes": "",
+"parent_id": "10",
+"tags": PackedStringArray(),
+"text": "我还不想种地，先看看世界的广阔吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "我还不想种地，先看看世界的广阔吧",
+"type": &"dialogue"
+},
+"13": {
+"id": "13",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"2": {
+"character": "小熊",
+"character_replacements": Array[Dictionary]([]),
+"id": "2",
+"next_id": "3",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[hi|好久不见|又是你这个小哈基米]]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[hi|好久不见|又是你这个小哈基米]]",
+"type": &"dialogue"
+},
+"3": {
+"character": "小熊",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "今天又想做我的星怒了吗？",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "今天又想做我的星怒了吗？",
+"type": &"dialogue"
+},
+"4": {
+"character": "小熊",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "给我摸摸你的小鸡鸡吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "给我摸摸你的小鸡鸡吧",
+"type": &"dialogue"
+},
+"5": {
+"character": "小熊",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "7",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "不开玩笑了，把这些东西交给你吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "不开玩笑了，把这些东西交给你吧",
+"type": &"dialogue"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "13",
+"notes": "",
+"responses": PackedStringArray("7", "10"),
+"tags": PackedStringArray(),
+"text": "拿取种子",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "拿取种子",
+"type": &"response"
+},
+"8": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "我能种地了喵",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "我能种地了喵",
+"type": &"dialogue"
+},
+"9": {
+"id": "9",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_give_crop_seeds",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "13",
+"parent_id": "7",
+"type": &"mutation"
+}
+}
+raw_text = "~ start
+小熊: [[hi|好久不见|又是你这个小哈基米]]
+小熊: 今天又想做我的星怒了吗？
+小熊: 给我摸摸你的小鸡鸡吧
+小熊: 不开玩笑了，把这些东西交给你吧
+
+- 拿取种子
+	哈基米: 我能种地了喵
+	do GameDialogueManager.action_give_crop_seeds()
+- 叛逆，不拿取
+	哈基米: 我还不想种地，先看看世界的广阔吧
+
+=> END"
+metadata/dialogue_manager_version = "2.44.1"

@@ -1,0 +1,255 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_06df4"]
+
+[resource]
+script = ExtResource("1_06df4")
+using_states = PackedStringArray()
+titles = {
+"start_chicken_pasture_box": "15",
+"start_cow_pasture_box": "3"
+}
+character_names = PackedStringArray("Pasture Box", "哈基米")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start_cow_pasture_box",
+"type": &"title"
+},
+"11": {
+"id": "11",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"13": {
+"id": "13",
+"next_id": "15",
+"text": "start_chicken_pasture_box",
+"type": &"title"
+},
+"15": {
+"character": "Pasture Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "15",
+"next_id": "16",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[你好呀|我想吃掉你]]，我的肚子饿了",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[你好呀|我想吃掉你]]，我的肚子饿了",
+"type": &"dialogue"
+},
+"16": {
+"character": "Pasture Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "17",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "你想自己来喂饱我还是用农场里的鸡蛋",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "你想自己来喂饱我还是用农场里的鸡蛋",
+"type": &"dialogue"
+},
+"17": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "17",
+"next_id": "18",
+"next_id_after": "23",
+"notes": "",
+"responses": PackedStringArray("17", "20"),
+"tags": PackedStringArray(),
+"text": "用自己",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "用自己",
+"type": &"response"
+},
+"18": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"notes": "",
+"parent_id": "17",
+"tags": PackedStringArray(),
+"text": "那就给你来vore一下吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "那就给你来vore一下吧",
+"type": &"dialogue"
+},
+"19": {
+"id": "19",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_feed_animals",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "23",
+"parent_id": "17",
+"type": &"mutation"
+},
+"20": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "21",
+"next_id_after": "23",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "鸡蛋",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "鸡蛋",
+"type": &"response"
+},
+"21": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "21",
+"next_id": "23",
+"notes": "",
+"parent_id": "20",
+"tags": PackedStringArray(),
+"text": "今日兴致不佳，还是鸡蛋好了",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "今日兴致不佳，还是鸡蛋好了",
+"type": &"dialogue"
+},
+"23": {
+"id": "23",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"3": {
+"character": "Pasture Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[你好呀|我想吃掉你]]，我的肚子饿了",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[你好呀|我想吃掉你]]，我的肚子饿了",
+"type": &"dialogue"
+},
+"4": {
+"character": "Pasture Box",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "你想自己来喂饱我还是用牛奶",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "你想自己来喂饱我还是用牛奶",
+"type": &"dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "11",
+"notes": "",
+"responses": PackedStringArray("5", "8"),
+"tags": PackedStringArray(),
+"text": "用自己",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "用自己",
+"type": &"response"
+},
+"6": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "那就给你来vore一下吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "那就给你来vore一下吧",
+"type": &"dialogue"
+},
+"7": {
+"id": "7",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameDialogueManager"
+}, {
+"type": "dot"
+}, {
+"function": "action_feed_animals",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "11",
+"parent_id": "5",
+"type": &"mutation"
+},
+"8": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"next_id_after": "11",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "牛奶",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "牛奶",
+"type": &"response"
+},
+"9": {
+"character": "哈基米",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "11",
+"notes": "",
+"parent_id": "8",
+"tags": PackedStringArray(),
+"text": "每次玩完都黏黏腻腻的 还是下一次吧，这次就用牛奶喂饱你吧",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "每次玩完都黏黏腻腻的 还是下一次吧，这次就用牛奶喂饱你吧",
+"type": &"dialogue"
+}
+}
+raw_text = "~ start_cow_pasture_box
+
+Pasture Box: [[你好呀|我想吃掉你]]，我的肚子饿了
+Pasture Box: 你想自己来喂饱我还是用牛奶
+- 用自己
+	哈基米: 那就给你来vore一下吧
+	do GameDialogueManager.action_feed_animals()
+- 牛奶
+	哈基米: 每次玩完都黏黏腻腻的 还是下一次吧，这次就用牛奶喂饱你吧
+
+=> END
+
+~ start_chicken_pasture_box
+
+Pasture Box: [[你好呀|我想吃掉你]]，我的肚子饿了
+Pasture Box: 你想自己来喂饱我还是用农场里的鸡蛋
+- 用自己
+	哈基米: 那就给你来vore一下吧
+	do GameDialogueManager.action_feed_animals()
+- 鸡蛋
+	哈基米: 今日兴致不佳，还是鸡蛋好了
+
+=> END"
+metadata/dialogue_manager_version = "2.44.1"

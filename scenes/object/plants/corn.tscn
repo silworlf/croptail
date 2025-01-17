@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6bm0gul4f3bq"]
+
+[ext_resource type="Script" path="res://scenes/object/plants/corn.gd" id="1_c8fl1"]
+[ext_resource type="Texture2D" uid="uid://cn4y3ti47rxw8" path="res://assets/game/objects/basic_plants.png" id="1_h3rpi"]
+[ext_resource type="PackedScene" uid="uid://c2ngfxchwvvgw" path="res://scenes/object/plants/watering_pratices.tscn" id="2_bawmt"]
+[ext_resource type="PackedScene" uid="uid://drly8huusxm5a" path="res://scenes/components/hurt_component.tscn" id="2_jhmj5"]
+[ext_resource type="PackedScene" uid="uid://c05pwrmu6kv67" path="res://scenes/object/plants/flowering_practices.tscn" id="3_kku6d"]
+[ext_resource type="PackedScene" uid="uid://doqvvfst7a6f2" path="res://scenes/object/plants/growth_cycle_component.tscn" id="5_vxn8m"]
+[ext_resource type="PackedScene" uid="uid://2uc0hvqpnwcc" path="res://scenes/components/save_data_component.tscn" id="7_g83d8"]
+[ext_resource type="Resource" uid="uid://b88rkqadukntk" path="res://resource/scene_data_resource.tres" id="8_fn33p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7lv2"]
+size = Vector2(14, 8)
+
+[node name="Corn" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_c8fl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_h3rpi")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="WateringPratices" parent="." instance=ExtResource("2_bawmt")]
+
+[node name="FloweringPractices" parent="." instance=ExtResource("3_kku6d")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_vxn8m")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_jhmj5")]
+position = Vector2(0, -4)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_f7lv2")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("7_g83d8")]
+save_data_resource = ExtResource("8_fn33p")

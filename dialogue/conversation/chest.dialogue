@@ -1,0 +1,23 @@
+~ start_cow_pasture_box
+
+Pasture Box: [[你好呀|我想吃掉你]]，我的肚子饿了
+Pasture Box: 你想自己来喂饱我还是用牛奶
+- 用自己
+	哈基米: 那就给你来vore一下吧
+	do GameDialogueManager.action_feed_animals()
+- 牛奶
+	哈基米: 每次玩完都黏黏腻腻的 还是下一次吧，这次就用牛奶喂饱你吧
+
+=> END
+
+~ start_chicken_pasture_box
+
+Pasture Box: [[你好呀|我想吃掉你]]，我的肚子饿了
+Pasture Box: 你想自己来喂饱我还是用农场里的鸡蛋
+- 用自己
+	哈基米: 那就给你来vore一下吧
+	do GameDialogueManager.action_feed_animals()
+- 鸡蛋
+	哈基米: 今日兴致不佳，还是鸡蛋好了
+
+=> END
